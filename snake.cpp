@@ -117,4 +117,24 @@ void atualizar()
             return;
         }
     }
+
+    // Se a cobra comeu a comida
+    if (novaCabeca.x == comida.x && novaCabeca.y == comida.y)
+    {
+        pontuacao += 10;
+        gerarComida();
+    }
+    else
+    {
+        cobra.pop_back();
+    }
+
+    cobra.insert(cobra.begin(), novaCabeca);
+}
+
+// Funcao principal
+int main()
+{
+
+    return 0;
 }
