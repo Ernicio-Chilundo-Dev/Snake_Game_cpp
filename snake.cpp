@@ -129,12 +129,26 @@ void atualizar()
         cobra.pop_back();
     }
 
+    //Adiciona uma nova cabeca da cobra
     cobra.insert(cobra.begin(), novaCabeca);
 }
 
 // Funcao principal
 int main()
 {
+    iniciarJogo();
 
+    while(jogoRodando){
+        desenhar();
+        atualizar();
+    }
+
+    //Fim
+    clear();
+    mvprintw(altura/2, largura/2-5, "Game over");
+    mvprintw(altura/2+1, largura/2-5,"Pontucao: %d",pontuacao);
+    refresh();
+    getch();
+    endwin();
     return 0;
 }
