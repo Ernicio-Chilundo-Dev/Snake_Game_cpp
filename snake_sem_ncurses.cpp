@@ -26,3 +26,43 @@ void setUp(){
     pontuacao = 0;
 
 }
+
+void  desenhar(){
+    system("cls");//limpa a tela windows
+
+    //Desenhar mapa
+    for(int i=0;i<largura+2;i++)cout <<"#";
+    cout <<endl;
+
+    for(int i =0; i <altura;i++){
+        for(int j=0;j<largura;j++){
+            if(j==0)cout << "#"; // Borda esquerda
+
+            if(i==y && j==x)
+                    cout << "O"; //Cabeca da cobra
+
+            else if(i==comidaY && comidaX)
+                cout << "O";//Comida
+
+            else{
+                bool impresso = false;
+                for(int k =0; k<ncauda;k++){
+                    if(caudaX[k]==j && caudaY[k] == i){
+                        cout <<"o";//corpo da cobra
+                        impresso=true;
+                    }
+
+
+                }
+                if(!impresso)cout << " ";
+            }
+            if(j==largura-1)cout << "#";//Borda direita
+        }
+        cout << endl;
+    }
+
+    for(int i= 0;i<largura+2;i++)cout <<"#";
+    cout <<endl;
+
+    cout << "Ponttucao: "<<pontuacao<<endl;
+}
