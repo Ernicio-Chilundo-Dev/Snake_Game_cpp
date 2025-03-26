@@ -66,3 +66,16 @@ void  desenhar(){
 
     cout << "Ponttucao: "<<pontuacao<<endl;
 }
+
+void entrada(){
+    if(_kbhit()){//Verfica se uma tecla foi pressionada
+        switch(_getch()){
+            case 'a':dir=ESQUERDA;break;
+            case 'd':dir=DIREITA;break;
+            case 's':dir=BAIXO;break;
+            case 'w':dir=CIMA;break;
+            case 'x':gameOver=true;break;
+        }
+
+    }
+}
